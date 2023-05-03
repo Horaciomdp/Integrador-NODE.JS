@@ -1,0 +1,151 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.header{
+	background-color:  #30343F;
+	height: 144px;	
+	width: 100vw;
+}
+
+.contenedorHeader{
+	display: grid;
+	grid-template-columns: 47% 47%;
+	grid-template-rows: 100%;
+	width: 100vw;	
+	height: 144px;
+	padding: 0 110px;	
+	align-items: center;
+	gap: 80px;
+}
+
+.logoHeader{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.linksHeader{
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: row;
+	gap: 49px;
+	list-style: none;
+	color: #FFFFFF;
+	border: 0px;
+	font-family: 'Raleway';
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 23px;	
+}
+
+.itemsHeader{
+	text-decoration: none;
+	color:white;	
+}
+.arrow {
+	width: 0.5em;
+	height: 0.5em;
+	display: inline-block;
+	vertical-align: middle;
+	border-left: 0.15em solid currentColor;
+	border-bottom: 0.15em solid currentColor;
+	transform: rotate(-45deg);
+	margin-left: 0.38em;
+	margin-top: -0.25em;
+}
+
+
+.carritoHeader{
+	width: 34px;
+	height: 24px;
+}
+
+.ingresos{
+    width: 100%;
+    height: 450px;
+    background-image: url(./media/imagenes/starwars2.jpg    );
+    background-size: 100%;
+	background-repeat: no-repeat;
+    opacity: 0.9;
+}
+
+.ingresos h2{
+    font-family: 'Play', sans-serif;
+    font-size: 30px;
+    margin-left: 30px;
+    padding-top: 50px;
+    
+}
+
+.ingresos h5{
+    font-family: 'Play', sans-serif;
+    font-size: 16px;
+    margin-left: 30px;
+    padding-top: 1px;
+}
+.boton {
+ 
+margin: 100px;
+padding:10px 50px;
+background-color: black;
+color: #FFFFFF;
+border-radius: 50px;
+text-align: center;
+font-family: 'Play', sans-serif;
+text-decoration: none;
+    }
+
+    .productos1{
+        margin-top: 50px;
+      display: flex;
+    }
+    
+    .productos1 div{
+        width: 100%;
+        height: 500px;
+              
+    }
+
+
+    #capturas{
+        background-image: url(/media/imagenes/babyioda.jpg);
+        background-position: center;
+        background-size: 92%;
+    }
+    #capturas1{
+        background-image: url(/media/imagenes/pokemonindigo.jpg);
+        background-position:center  ;
+        background-repeat: no-repeat;
+    }
+    #capturas2{
+        background-image: url(/media/imagenes/harry.jpg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    article{
+        margin-top: 15px;
+        font-family: 'Play', bold;
+        margin-left: 10%;
+        font-size: 30px;
+        text-align: left;
+    }
+
+    .novedades{
+        margin-top: 50px;
+      display: flex;
+    }
+    
+    .novedades div{
+        width: 100%;
+        height: 500px;
+              
+    }
+
+footer{
+    background-color: black;
+}
