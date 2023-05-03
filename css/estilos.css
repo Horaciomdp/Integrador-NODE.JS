@@ -151,3 +151,66 @@ header {
 .submenu__link:hover {
 	background-color: var(--primary-900); 
 }
+
+/* BANNER O ELEMENTO HERO */
+
+.hero {
+	background-image: url(../img/funkos-banner.webp);
+	padding: var(--spacing-128);
+	background-position: top;
+	background-size: cover;
+	background-attachment: fixed;		/*propiedad que ahce que el fondo no se mueva cuando se redimemsiona la pagina */
+	position: relative;					/* no olvidar los positions de todos los elementos sino no sale*/
+}
+								/* para lograr el efecto de filtro oscuro y blureado no se puede colocar la propiedad filter sobre hero de manera directa pues eso afecta a hero (tanto imagen como texto cuando la idea es solo afectar la imagen
+								para ello no existe propiedad css que nos deje hacer solo al background. para esto se usa un truco de modificar la pseudoclase de hero "::before" donde colocamos una capa nueva que le colocaremos un contenido pero solo vacio (content'')
+								a ello se le cvambia el position de static (que lo ubica detras de la imagen) y queremos que se coloque delante y se vea , se cambia a position absolute y al padre un position relative dandole el ancho y alto de 100%
+								al recargar agrega el elemento oscuro pero en otra posicion , para corregir esto se agrega un top 0 y un left 0, se agrega tras parencia de cero y se puede ahora aplicar la propiedad backdrop-filter con el blu y brillo deseados sin olvidar que 
+								para que no afecte y teniendo en cuenta los cambios de posicion absoluta y relativa podemos tocar el z-index para moverlo hacia delante o detras segun nos interese. */
+.hero::before {
+	content: '';
+	background-color: (0,0,0, 1);
+	width: 100%;
+	height: 100%;
+	position: absolute;			/* no olvidar los positions de todos los elementos sino no sale*/
+	top: 0;
+	left: 0;
+	backdrop-filter: blur(2px) brightness(.9);
+	
+}
+
+.hero__content {
+	display: flex; 			 /*si no la uso igual quedan una encima de otro pero no puedo usar la propiedad gap para obtener las separaciones sin calcular */
+	flex-direction: column;
+	gap: var(--spacing-20);   /*esta propiedad me deja usarla solo si esta display flex */
+	align-items: start;			/* por defecto es stretch esto hace que por la propiedad display flex tome todo el ancho del contenedor padre (en este caso el article) si le ponemos start se ubican en el inicio y solo tomoan el tamaño del elemento*/
+	z-index: 2;
+	position: relative;				/* no olvidar los positions de todos los elementos sino no sale*/
+}
+
+.hero__title {
+	font-family: var(--alternative-font);
+	font-size: var(--font-jumbo);
+	color: var(--light-font-solid);
+}
+
+.hero__text {
+	font-family: var(--alternative-font);
+	font-size: var(--font-medium);
+	color: var(--light-font-solid);
+}
+
+.hero__link {
+	display: inline-block;
+	font-size: var(--font-medium);
+	background-color: var(--light-bg-solid);
+	padding: var(--spacing-12) var(--spacing-68);
+	border-radius: 50px;
+	font-weight: 500;
+	transition: all .3s ease-in-out;
+}
+
+.hero__link:hover {
+	background-color: var(--primary-900);
+	color: var(--light-font-solid);
+}
